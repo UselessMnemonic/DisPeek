@@ -1,6 +1,6 @@
 {
-    "name": "DisPeek",
-    "description": "Auto encryption/decryption for end-to-end message integrity and privacy.",
+    "name": "$displayName",
+    "description": "$description",
     "version": "1.0",
     "manifest_version": 3,
 
@@ -10,6 +10,8 @@
 
     "content_scripts": [{
         "matches": ["https://discord.com/channels/*"],
+        "exclude_matches": ["https://discord.com/channels/@me"],
+        "run_at": "document_start",
         "js": ["content.js"]
     }]
 }
